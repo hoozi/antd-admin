@@ -12,5 +12,6 @@ module.exports = function override(config, env) {
   alias['@u'] = resolve(__dirname, './src/utils');
   alias['@a'] = resolve(__dirname, './src/api');
   alias['@p'] = resolve(__dirname, './src/pages');
+  alias['@cm'] = resolve(__dirname, './src/styles/modules');
   return config;
 };

@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button } from 'antd';
+import request from '@u/request';
 
 class App extends Component {
+  componentDidMount() {
+    request('/aaa')
+  }
   render() {
     return (
       <div className="App">

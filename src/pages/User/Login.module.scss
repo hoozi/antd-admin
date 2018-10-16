@@ -1,0 +1,40 @@
+%width-full {
+  width: 100%;
+}
+
+.widthFull,
+.codeImg,
+.loginContainer {
+  @extend %width-full;
+}
+
+.loginContainer {
+  height: 100%;
+  background-image: url('@/assets/bg.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loginArea {
+  width: 360px;
+}
+.loginTitle {
+  text-align: center;
+  margin: 0px 0px 20px;
+  color: #fff;
+  font-size: 16px;
+}
+.loginHeader {
+  margin-bottom: 32px;
+  
+  h1, p {
+    color: #fff;
+  }
+}
+
+.codeImg {
+  height: 40px;
+  cursor: pointer;
+}

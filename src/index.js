@@ -1,13 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import styles from './Button.module.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-console.log(styles)
-ReactDOM.render(<App />, document.getElementById('root'));
+import dva from 'dva';
+import createLoading from 'dva-loading';
+import createHashHistory from 'history/createHashHistory'
+import './index.scss';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const app = dva({
+  history: createHashHistory()
+});
+
+// 2. Plugins
+app.use(createLoading());
+
+// 3. Register global model
+app.model(require('./models/user').default);
+
+// 4. Router
+app.router(require('./routes').default);
+
+// 5. Start
+app.start('#root');
+
+export default app._store;
+
